@@ -1,0 +1,16 @@
+<table class="table table-bordered table-striped">
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Director</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-repeat="movie in controller.movies">
+      <td>
+        <a ui-sref="about({id: movie.id})">{{movie.title}}</a>
+      </td>
+      <td>{{movie.director}}</td>
+    </tr>
+  </tbody>
+</table>
