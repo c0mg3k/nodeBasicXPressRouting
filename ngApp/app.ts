@@ -19,6 +19,18 @@ namespace nodewebapi {
                 controller: nodewebapi.Controllers.AboutController,
                 controllerAs: 'controller'
             })
+            .state('addMovie', {
+                url: '/addMovie',
+                templateUrl: '/ngApp/views/addmovie.html',
+                controller: nodewebapi.Controllers.AddMovieController, //DOES NOT EXIST
+                controllerAs: 'controller'
+            })
+            .state('editMovie', {
+              url: '/editMovie/:id',
+              templateUrl: '/ngApp/views/editMovie.html',
+              controller: nodewebapi.Controllers.EditMovieController,
+              controllerAs: 'controller'
+            })
             .state('notFound', {
                 url: '/notFound',
                 templateUrl: '/ngApp/views/notFound.html'

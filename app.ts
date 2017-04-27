@@ -6,9 +6,19 @@ import * as cookieParser from 'cookie-parser';
 import * as bodyParser from 'body-parser';
 import * as ejs from 'ejs';
 
+import * as mongoose from 'mongoose';
 import routes from './routes/index';
 import users from './routes/users';
 import movies from './api/movies';
+
+const CONNECTION_STRING = 'mongodb://main:pw1234@ds121171.mlab.com:21171/movies-basic'
+mongoose.connect(CONNECTION_STRING).then(()=>{
+  console.log('Your connection was established...');
+}).catch((err) => {
+  console.log(err);
+});
+
+
 
 let app = express();
 
@@ -29,7 +39,7 @@ app.use('/api', express.static(path.join(__dirname, 'api')));
 
 app.use('/', routes);
 app.use('/users', users);
-app.use('/api/movies', movies); 
+app.use('/api/movies', movies);
 
 
 // redirect 404 to home for the sake of AngularJS client-side routes

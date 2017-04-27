@@ -3,14 +3,16 @@
     <tr>
       <th>Title</th>
       <th>Director</th>
+      <th>Edit Movie</th>
     </tr>
   </thead>
   <tbody>
     <tr ng-repeat="movie in controller.movies">
       <td>
-        <a ui-sref="about({id: movie.id})">{{movie.title}}</a>
+        <a ui-sref="about({id: movie._id})">{{movie.title}}</a>
       </td>
       <td>{{movie.director}}</td>
+      <td><a ui-sref="editMovie({id: movie._id})">Edit</a></td>
     </tr>
   </tbody>
 </table>
